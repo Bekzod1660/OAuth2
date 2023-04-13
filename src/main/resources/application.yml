@@ -1,0 +1,58 @@
+#server:
+#  port: 8080
+#
+#spring:
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          articles-client-oidc:
+#            provider: spring
+#            client-id: articles-client
+#            client-secret: blablabla
+#            authorization-grant-type: authorization_code
+#            redirect-uri: "http://127.0.0.1:8080/login/oauth2/code/"
+#            scope: openid
+#            client-name: articles-client-oidc
+#          articles-client-authorization-code:
+#            provider: spring
+#            client-id: articles-client
+#            client-secret: blablabla
+#            authorization-grant-type: authorization_code
+#            redirect-uri: "http://127.0.0.1:8080/authorized"
+#            scope: api.read
+#            client-name: articles-client-authorization-code
+#        provider:
+#          spring:
+#            issuer-uri: http://127.0.0.1:9000
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 838572357831-a6aci5evdth3qi9jo0isjivpbqci2417.apps.googleusercontent.com
+            clientSecret: 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
+            scope:
+              - email
+              - profile
+          github:
+            client-id: f333bc12a6ff76d2a1a4
+            client-secret:  5f24c63c3edc86ae1e54b2849cb198793804c0f8
+          facebook:
+            client-id: 899231444625946
+            client-secret: f284c675d57a0bf79c080c931cd89195
+spring.jpa:
+  database: POSTGRESQL
+  hibernate.ddl-auto: create-drop
+  show-sql: true
+
+spring.datasource:
+  driverClassName: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/OAuth2
+  username: postgres
+  password: 1660
+
+server:
+  port: 8080
+

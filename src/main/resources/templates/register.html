@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<FORM method="post" th:action="@{/auth/login}">
+    <label>Username</label>
+    <input type="text" name="username" placeholder="username ..." >
+    <label>password</label>
+   <input type="password" name="password" placeholder="password ...">
+    <label>email</label>
+    <input type="text" name="email" placeholder="email ... ">
+    <input type="submit" value="Log In">
+</FORM>
+<a th:href="@{/oauth2/authorization/google}">Google</a>
+<a th:href="@{/oauth2/authorization/github}">GitHub</a>
+<a th:href="@{/oauth2/authorization/facebook}">Facebook</a>
+
+</body>
+</html>
